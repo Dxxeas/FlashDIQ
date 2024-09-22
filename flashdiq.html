@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashDIQ 1.14</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #f8f8f8;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 2px -2px gray;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #00bfff;
+        }
+
+        .content {
+            margin-top: 100px;
+        }
+
+        .download-button {
+            background-color: #00bfff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #007fff;
+        }
+
+        .file-link {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .file-link:hover {
+            color: #00bfff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Верхняя панель навигации -->
+    <div class="navbar">
+        <a href="#" id="homeBtn">Home</a>
+        <a href="#" id="aboutBtn">About</a>
+    </div>
+
+    <!-- Контент -->
+    <div class="content" id="contentArea">
+        <h1>FlashDIQ 1.14</h1>
+        <p>FlashDIQ Make on .NET 8.0, good terminal for work.</p>
+        <button class="download-button" id="downloadBtn">Download</button>
+    </div>
+
+    <script>
+        // Функции для навигации по страницам
+        document.getElementById('homeBtn').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h1>FlashDIQ 1.14</h1>
+                <p>FlashDIQ Make on .NET 8.0, good terminal for work.</p>
+                <button class="download-button" id="downloadBtn">Download</button>
+            `;
+
+            document.getElementById('downloadBtn').addEventListener('click', function() {
+                window.location.href = 'C:/FlashDIQ_1.14.zip'; // Убедитесь, что путь к файлу правильный
+            });
+        });
+
+        document.getElementById('aboutBtn').addEventListener('click', function() {
+            document.getElementById('contentArea').innerHTML = `
+                <h1>All commands FlashDIQ:</h1>
+                <ul style="list-style-type:none; padding: 0;">
+                    <li>files (drive letter)</li>
+                    <li>diq install (minFull, xTibo)</li>
+                    <li>info installed</li>
+                    <li>minFull -GetHost (127.05.62.863:1, localhost:1)</li>
+                </ul>
+            `;
+        });
+
+        // Обработчик для кнопки Download
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            window.location.href = 'C:/FlashDIQ_1.14.zip'; // Убедитесь, что путь к файлу правильный
+        });
+    </script>
+
+</body>
+</html>
